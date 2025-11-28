@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+ --background-gradient: linear-gradient(to right, #dbd1ac, #dbadc7);
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background-gradient);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+body {
+  background: var(--background-gradient);
+  color: var(--foreground);
+}
