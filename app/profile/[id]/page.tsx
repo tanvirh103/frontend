@@ -27,7 +27,7 @@ export default async function Profile({ params }: { params: any }) {
           </p>
           <p className="mb-2">
             <span className="font-medium truncate">Resume Url:</span>{" "}
-            {user?.resume.length === 0 ? "N/A" : user?.resume}
+            {user?.resume?.length === 0 ? "N/A" : user?.resume}
           </p>
           <p className="mb-2">
             <span className="font-medium">Experience:</span>{" "}

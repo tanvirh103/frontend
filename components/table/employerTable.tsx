@@ -30,24 +30,24 @@ export default function EmployerTable({ jobs }: any) {
   return (
     <>
       <tbody>
-        {jobs && jobs.length > 0 ? (
-          jobs.map((job: any, index: number) => (
+        {jobs && jobs?.length > 0 ? (
+          jobs?.map((job: any, index: number) => (
             <tr
               key={job._id}
               className={`border-b last:border-b-0 ${
                 index % 2 === 0 ? "bg-gray-50" : "bg-white"
               } hover:bg-indigo-100 transition`}
             >
-              <td className="py-3 px-4 text-sm text-gray-800">{job._id}</td>
+              <td className="py-3 px-4 text-sm text-gray-800">{job?._id}</td>
               <td className="py-3 px-4 text-sm font-medium text-indigo-600">
-                {job.title}
+                {job?.title}
               </td>
               <td className="py-3 px-4 text-sm text-gray-700 max-w-[260px] truncate">
                 {job.description}
               </td>
-              <td className="py-3 px-4 text-sm text-gray-800">{job.company}</td>
+              <td className="py-3 px-4 text-sm text-gray-800">{job?.company}</td>
               <td className="py-3 px-4 text-sm text-gray-800">
-                {job.location}
+                {job?.location}
               </td>
               <td className="py-3 px-4 text-sm text-gray-800">
                 <div className="flex items-center space-x-2">
@@ -73,7 +73,7 @@ export default function EmployerTable({ jobs }: any) {
 
                   <button
                     type="button"
-                     onClick={() => {handleDeleteClick(job._id);
+                     onClick={() => {handleDeleteClick(job?._id);
                     }}
                     title="Delete job"
                     className="inline-flex cursor-pointer items-center px-2 py-1 text-sm font-medium text-red-600 bg-red-50 hover:bg-red-100 rounded-md focus:outline-none"

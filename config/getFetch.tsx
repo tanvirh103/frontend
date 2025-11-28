@@ -60,7 +60,7 @@ export async function getFetch({
   } catch (error: any) {
     return {
       success: false,
-      data: null,
+      data: undefined,
       message:
         error instanceof TypeError
           ? "Network error. Check your internet connection or server status."

@@ -22,35 +22,35 @@ export default function UserTable({ allUsers }: any) {
   };
   return (
     <tbody>
-      {allUsers && allUsers.length > 0 ? (
-        allUsers.map((user: any, index: number) => (
+      {allUsers && allUsers?.length > 0 ? (
+        allUsers?.map((user: any, index: number) => (
           <tr
             key={user._id}
             className={`border-b last:border-b-0 ${
               index % 2 === 0 ? "bg-gray-50" : "bg-white"
             } hover:bg-emerald-100 transition`}
           >
-            <td className="py-3 px-4 text-sm text-gray-800">{user._id}</td>
+            <td className="py-3 px-4 text-sm text-gray-800">{user?._id}</td>
 
             <td className="py-3 px-4 text-sm font-medium text-emerald-700">
-              {user.name}
+              {user?.name}
             </td>
 
-            <td className="py-3 px-4 text-sm text-gray-700">{user.email}</td>
+            <td className="py-3 px-4 text-sm text-gray-700">{user?.email}</td>
 
-            <td className="py-3 px-4 text-sm text-gray-800">{user.role}</td>
+            <td className="py-3 px-4 text-sm text-gray-800">{user?.role}</td>
 
             <td className="py-3 px-4 text-sm">
               <ToggleSwitch
                 isChecked={user?.isApproved === true ? true : false}
-                setIsChecked={() => handleIsApproved(user._id)}
+                setIsChecked={() => handleIsApproved(user?._id)}
               />
             </td>
 
             <td className="py-3 px-4 text-sm flex gap-2">
               <ToggleSwitch
                 isChecked={user?.isBlocked === true ? true : false}
-                setIsChecked={() => handleUpdateStatus(user._id)}
+                setIsChecked={() => handleUpdateStatus(user?._id)}
               />
             </td>
           </tr>

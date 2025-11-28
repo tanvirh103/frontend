@@ -58,34 +58,34 @@ export default function DashboardTable({ jobs }: any) {
         {jobs && jobs?.length > 0 ? (
           jobs?.map((job: any, index: number) => (
             <tr
-              key={job._id}
+              key={job?._id}
               className={`border-b last:border-b-0 ${
                 index % 2 === 0 ? "bg-gray-50" : "bg-white"
               } hover:bg-indigo-100 transition`}
             >
-              <td className="py-3 px-4 text-sm text-gray-800">{job._id}</td>
+              <td className="py-3 px-4 text-sm text-gray-800">{job?._id}</td>
               <td className="py-3 px-4 text-sm font-medium text-indigo-600">
-                {job.title}
+                {job?.title}
               </td>
               <td className="py-3 px-4 text-sm text-gray-700 max-w-[260px] truncate">
-                {job.description}
+                {job?.description}
               </td>
-              <td className="py-3 px-4 text-sm text-gray-800">{job.company}</td>
+              <td className="py-3 px-4 text-sm text-gray-800">{job?.company}</td>
               <td className="py-3 px-4 text-sm text-gray-800">
-                {job.location}
+                {job?.location}
               </td>
               <td className="py-3 px-4 text-sm text-gray-800">
-                {new Date(job.createdAt).toLocaleDateString()}
+                {new Date(job?.createdAt).toLocaleDateString()}
               </td>
               {role === "jobseeker" && (
                 <td className="py-3 px-4 text-sm text-gray-800">
-                  {appliedJobs[job._id] ? (
+                  {appliedJobs[job?._id] ? (
                     <span className="px-3 py-1 text-xs rounded bg-gray-400 text-white cursor-not-allowed">
                       Applied
                     </span>
                   ) : (
                     <button
-                      onClick={() => handleApply(job._id)}
+                      onClick={() => handleApply(job?._id)}
                       className="px-3 py-1 text-xs rounded bg-emerald-600 text-white hover:bg-emerald-500 cursor-pointer"
                     >
                       Apply
